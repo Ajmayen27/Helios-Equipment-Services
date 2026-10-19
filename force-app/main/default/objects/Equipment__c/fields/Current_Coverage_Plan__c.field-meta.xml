@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Current_Coverage_Plan__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>The plan that currently covers this unit read by the coverage formula (SVC-03).</description>
+    <inlineHelpText>Set automatically when a plan is activated.</inlineHelpText>
+    <label>Current Coverage Plan</label>
+    <referenceTo>Coverage_Plan__c</referenceTo>
+    <relationshipLabel>Currently Covered Equipment</relationshipLabel>
+    <relationshipName>Currently_Covered_Equipment</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

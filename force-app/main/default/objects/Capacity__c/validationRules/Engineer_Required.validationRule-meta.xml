@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Engineer_Required</fullName>
+    <active>true</active>
+    <description>Every capacity record must belong to an engineer.</description>
+    <errorConditionFormula>AND( NOT($Permission.Bypass_Validation_Rules), ISBLANK(Engineer__c))</errorConditionFormula>
+    <errorDisplayField>Engineer__c</errorDisplayField>
+    <errorMessage>Choose the engineer this capacity belongs to.</errorMessage>
+</ValidationRule>
