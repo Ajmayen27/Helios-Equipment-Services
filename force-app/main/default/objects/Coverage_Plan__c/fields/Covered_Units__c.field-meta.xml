@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Covered_Units__c</fullName>
+    <description>Number of units this plan covers.</description>
+    <label>Covered Units</label>
+    <summaryForeignKey>Equipment_Coverage__c.Coverage_Plan__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>
