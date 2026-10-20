@@ -1,0 +1,1 @@
+- Business Hours 'HES Working Week': Mon-Fri 24h, Europe/Amsterdam, Sat-Sun closed; holiday Christmas Eve 24/12/2026
