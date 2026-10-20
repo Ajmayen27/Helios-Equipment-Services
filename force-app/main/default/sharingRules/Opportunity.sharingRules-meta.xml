@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>Pipeline_to_finance</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Finance Approver sees every sales-team opportunity read-only, to review discounts and pipeline.</description>
+        <label>Pipeline to finance</label>
+        <sharedTo>
+            <role>Finance_Approver</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>Sales_Manager</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>
