@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>HES_Err_Effort_Required</fullName>
+        <categories>HES</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>HES Effort Required Error</shortDescription>
+        <value>Enter an estimated effort above zero before assigning to an engineer.</value>
+    </labels>
+    <labels>
+        <fullName>HES_Err_Negotiation_Lines</fullName>
+        <categories>HES</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>HES Negotiation Lines Error</shortDescription>
+        <value>Add at least one equipment line before moving to Negotiation.</value>
+    </labels>
+    <labels>
+        <fullName>HES_Generic_Error</fullName>
+        <categories>HES</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>HES Generic Error</shortDescription>
+        <value>Something went wrong while saving. Your administrator has been notified.</value>
+    </labels>
+    <labels>
+        <fullName>HES_Msg_No_Coverage_Access</fullName>
+        <categories>HES</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>HES  Message No Coverage Access</shortDescription>
+        <value>No equipment found that you have access to.</value>
+    </labels>
+    <labels>
+        <fullName>HES_Msg_Unscheduled</fullName>
+        <categories>HES</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>HES Unscheduled  Message</shortDescription>
+        <value>This engineer is not scheduled, so no work has been planned.</value>
+    </labels>
+</CustomLabels>
