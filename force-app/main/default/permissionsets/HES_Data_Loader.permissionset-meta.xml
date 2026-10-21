@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Bypass_Validation_Rules</name>
+    </customPermissions>
+    <description>Grants Bypass Validation Rules for bulk data loads and the sample-data seed (11-01) only. Never assign to business users; remove after the load.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>HES Data Loader</label>
+</PermissionSet>
