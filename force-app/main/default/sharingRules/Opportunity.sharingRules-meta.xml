@@ -12,4 +12,16 @@
             <roleAndSubordinatesInternal>Sales_Manager</roleAndSubordinatesInternal>
         </sharedFrom>
     </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Pipeline_to_service_manager</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Service Manager sees every sales-team opportunity read-only, to review cost and margin.</description>
+        <label>Pipeline to service manager</label>
+        <sharedTo>
+            <role>Service_Manager</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>Sales_Manager</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
 </SharingRules>
