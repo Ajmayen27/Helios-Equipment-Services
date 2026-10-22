@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" role="img" aria-label="Screw air compressor">
+  <defs>
+    <linearGradient id="cbody" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4f8f5"/><stop offset="1" stop-color="#d4e2d8"/></linearGradient>
+    <linearGradient id="cside" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#bccfc1"/><stop offset="1" stop-color="#9fb8a6"/></linearGradient>
+    <linearGradient id="tank" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4bca81"/><stop offset="1" stop-color="#22683e"/></linearGradient>
+  </defs>
+  <ellipse cx="200" cy="232" rx="170" ry="12" fill="#000" opacity="0.08"/>
+  <rect x="190" y="150" width="170" height="70" rx="35" fill="url(#tank)"/>
+  <ellipse cx="360" cy="185" rx="12" ry="35" fill="#1e5e38"/>
+  <rect x="240" y="138" width="14" height="14" fill="#7d8ea4"/><circle cx="247" cy="132" r="9" fill="#e5e5e5" stroke="#7d8ea4" stroke-width="3"/>
+  <rect x="40" y="60" width="200" height="160" rx="8" fill="url(#cbody)" stroke="#97ae9e"/>
+  <path d="M240 66 L268 52 L268 200 L240 220 Z" fill="url(#cside)" stroke="#97ae9e"/>
+  <path d="M40 60 L68 46 L268 46 L268 52 L240 66 L40 66 Z" fill="#e8f0ea" stroke="#97ae9e"/>
+  <g fill="#9fb8a6">
+    <rect x="58" y="86" width="90" height="6" rx="3"/><rect x="58" y="100" width="90" height="6" rx="3"/><rect x="58" y="114" width="90" height="6" rx="3"/>
+    <rect x="58" y="128" width="90" height="6" rx="3"/><rect x="58" y="142" width="90" height="6" rx="3"/><rect x="58" y="156" width="90" height="6" rx="3"/>
+  </g>
+  <rect x="162" y="82" width="62" height="74" rx="4" fill="#1b2a3c"/>
+  <rect x="170" y="90" width="46" height="26" rx="2" fill="#7cf2a8" opacity="0.85"/>
+  <text x="193" y="108" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#0b2e1a" text-anchor="middle">7.5 bar</text>
+  <circle cx="180" cy="134" r="7" fill="#45c65a"/><circle cx="206" cy="134" r="7" fill="#c23934"/>
+  <rect x="58" y="176" width="166" height="28" rx="4" fill="#2e844a"/>
+  <text x="141" y="195" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">HELIOS AIR</text>
+  <rect x="50" y="220" width="22" height="10" fill="#7d8ea4"/><rect x="208" y="220" width="22" height="10" fill="#7d8ea4"/>
+  <rect x="200" y="218" width="16" height="10" fill="#1e5e38"/><rect x="334" y="218" width="16" height="10" fill="#1e5e38"/>
+</svg>

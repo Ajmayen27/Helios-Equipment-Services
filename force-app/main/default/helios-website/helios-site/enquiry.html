@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Helios Equipment Services – public enquiry form (SAL-01, Web-to-Lead).
+       Each submission creates a Lead with Lead Source = Web; the Lead_AfterSave flow
+       then sends the HES Lead Acknowledgement email alert.
+       Field names, oid and lead_source are unchanged from the form generated in Salesforce. -->
+  <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Request a Quote – Helios Equipment Services</title>
+  <meta name="description" content="Request a quote or a specialist call for industrial chillers, compressors and air dryers.">
+  <meta name="theme-color" content="#032d60">
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <style>
+    .form-hero { background: linear-gradient(135deg, var(--navy) 0%, var(--brand-dark) 55%, var(--brand) 100%); color: #fff; padding: 44px 0 120px; }
+    .form-hero h1 { font-size: clamp(28px, 4vw, 40px); margin: 0 0 8px; }
+    .form-hero p { margin: 0; opacity: 0.9; max-width: 600px; }
+    .crumbs { font-size: 13px; margin-bottom: 14px; opacity: 0.85; }
+    .crumbs a { color: #fff; }
+
+    .wrap { max-width: var(--max); margin: -88px auto 0; padding: 0 16px; display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 20px; position: relative; z-index: 2; }
+    @media (max-width: 900px) { .wrap { grid-template-columns: minmax(0, 1fr); } .side { order: -1; } }
+    .card { background: #fff; border: 1px solid #e5e5e5; border-radius: var(--radius); box-shadow: var(--shadow); }
+    .card-head { padding: 16px 20px; border-bottom: 1px solid #e5e5e5; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .card-head h2 { margin: 0; font-size: 16px; }
+    .card-body { padding: 20px; }
+
+    .progress-label { font-size: 12px; color: var(--muted); white-space: nowrap; }
+    .progress { height: 6px; background: #e5e5e5; border-radius: 3px; overflow: hidden; margin: 0 20px; }
+    .progress > i { display: block; height: 100%; width: 0; background: var(--brand); transition: width 0.3s ease; }
+
+    fieldset { border: 0; padding: 0; margin: 0 0 24px; }
+    legend { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--brand-dark); margin-bottom: 12px; padding: 0; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 16px; }
+    .grid .full { grid-column: 1 / -1; }
+    @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
+
+    .field label, .field .label { display: block; font-size: 12px; color: #444; margin-bottom: 4px; }
+    .req { color: var(--error); margin-right: 2px; text-decoration: none; border: 0; cursor: help; }
+    .field input[type=text], .field input[type=email], .field input[type=tel], .field input[type=number], .field textarea {
+      width: 100%; border: 1px solid #c9c9c9; border-radius: 0.25rem; padding: 0 12px; min-height: 38px;
+      font: inherit; font-size: 14px; color: var(--ink); background: #fff; transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .field textarea { padding: 8px 12px; min-height: 100px; resize: vertical; }
+    .field input:focus, .field textarea:focus { outline: 0; border-color: var(--brand); box-shadow: 0 0 3px var(--brand); }
+    .field.has-error input, .field.has-error textarea { border-color: var(--error); box-shadow: 0 0 0 1px var(--error) inset; }
+    .help { font-size: 12px; color: var(--error); margin-top: 4px; display: none; }
+    .field.has-error .help { display: block; }
+    .hint { font-size: 12px; color: var(--muted); margin-top: 4px; }
+    .money { position: relative; }
+    .money span { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--muted); }
+    .money input { padding-left: 28px !important; }
+
+    .tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    @media (max-width: 560px) { .tiles { grid-template-columns: 1fr; } }
+    .tile { position: relative; }
+    .tile input { position: absolute; opacity: 0; inset: 0; width: 100%; height: 100%; cursor: pointer; margin: 0; }
+    .tile .face { border: 1px solid #c9c9c9; border-radius: var(--radius); padding: 10px; text-align: center; transition: all 0.15s; height: 100%; }
+    .tile img { width: 100%; max-width: 140px; margin: 0 auto; }
+    .tile b { display: block; margin-top: 4px; font-size: 14px; }
+    .tile small { color: var(--muted); font-size: 12px; }
+    .tile input:checked + .face { border-color: var(--brand); background: var(--sky); box-shadow: 0 0 0 1px var(--brand) inset; }
+    .tile input:focus-visible + .face { box-shadow: 0 0 3px var(--brand); }
+    .field.has-error .tile .face { border-color: var(--error); }
+
+    .pills { display: flex; flex-wrap: wrap; gap: 8px; }
+    .pill { position: relative; }
+    .pill input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+    .pill span { display: inline-block; padding: 6px 14px; border: 1px solid #c9c9c9; border-radius: 999px; background: #fff; font-size: 13px; transition: all 0.15s; }
+    .pill input:checked + span { background: var(--brand); border-color: var(--brand); color: #fff; }
+    .pill input:focus-visible + span { box-shadow: 0 0 3px var(--brand); }
+    .counter { text-align: right; font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+    .actions { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; border-top: 1px solid #e5e5e5; padding-top: 18px; }
+    .btn[disabled] { opacity: 0.7; cursor: wait; }
+    .spinner { width: 16px; height: 16px; border: 2px solid rgba(255,255,255,0.4); border-top-color: #fff; border-radius: 50%; animation: spin 0.8s linear infinite; display: none; }
+    .btn.loading .spinner { display: inline-block; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .privacy { font-size: 12px; color: var(--muted); max-width: 380px; margin: 0; }
+    .alert { display: none; background: #fef1ee; border: 1px solid #fe9339; color: #3e3e3c; padding: 10px 14px; border-radius: 0.25rem; margin-bottom: 16px; font-size: 13px; }
+    .alert.show { display: block; }
+
+    .picked { display: none; grid-template-columns: 96px 1fr auto; gap: 14px; align-items: center; background: var(--sky); border: 1px solid #b8d4fb; border-radius: var(--radius); padding: 10px 14px; margin-bottom: 20px; }
+    .picked.show { display: grid; }
+    .picked img { width: 96px; }
+    .picked b { color: var(--navy); }
+    .picked small { display: block; color: var(--muted); }
+    .picked button { background: none; border: 0; color: var(--brand); font: inherit; font-size: 13px; cursor: pointer; }
+    @media (max-width: 480px) { .picked { grid-template-columns: 64px 1fr; } .picked img { width: 64px; } .picked button { grid-column: 1 / -1; justify-self: start; padding: 0; } }
+
+    .side .card + .card { margin-top: 16px; }
+    .summary dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 6px 12px; font-size: 13px; }
+    .summary dt { color: var(--muted); }
+    .summary dd { margin: 0; font-weight: 600; word-break: break-word; }
+    .summary dd.empty { color: #aaa; font-weight: 400; }
+    .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+    .steps li { display: grid; grid-template-columns: 28px 1fr; gap: 10px; font-size: 13px; }
+    .steps .n { width: 28px; height: 28px; border-radius: 50%; background: var(--sky); color: var(--brand-dark); font-weight: 700; display: grid; place-items: center; }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" aria-label="Main">
+    <div class="container">
+      <a class="logo" href="index.html"><img src="assets/img/logo.svg" alt="" width="32" height="32"><span>Helios Equipment Services<small>Cooling · Compressed air · Service</small></span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navLinks">Menu</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#products">Products</a></li>
+        <li><a href="index.html#service">Service plans</a></li>
+        <li><a href="index.html#regions">Regions</a></li>
+        <li><a class="btn btn-sun btn-sm" href="enquiry.html" aria-current="page">Request a quote</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="form-hero">
+    <div class="container">
+      <div class="crumbs"><a href="index.html">Home</a> › Request a quote</div>
+      <h1>Request a quote or a specialist call</h1>
+      <p>Tell us about your cooling or compressed-air requirement. A specialist for your region will contact you within one working day.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card" aria-labelledby="formTitle">
+      <div class="card-head">
+        <h2 id="formTitle">Your enquiry</h2>
+        <span class="progress-label" id="progressLabel">0 of 5 required fields</span>
+      </div>
+      <div class="progress" aria-hidden="true"><i id="progressBar"></i></div>
+
+      <div class="card-body">
+        <div class="picked" id="picked" aria-live="polite">
+          <img id="pickedImg" src="" alt="">
+          <div><small>Selected product</small><b id="pickedName"></b><small id="pickedMeta"></small></div>
+          <button type="button" id="pickedClear">Change</button>
+        </div>
+
+        <div class="alert" id="formAlert" role="alert">Please complete the highlighted fields.</div>
+
+        <form id="leadForm" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Dfj00000klaTl" method="POST" novalidate>
+
+          <!-- Salesforce routing fields: do not change oid or lead_source.
+               retURL is set to this site's thank-you page (the script below keeps it correct on any domain). -->
+          <input type="hidden" name="oid" value="00Dfj00000klaTl">
+          <input type="hidden" id="retURL" name="retURL" value="https://sprightly-pothos-2e1dfb.netlify.app/thank-you.html">
+          <input type="hidden" id="lead_source" name="lead_source" value="Web">
+
+          <!-- Testing only: remove the comment marks around the next two lines to see Salesforce's debug page and get an email. Put them back before going live. -->
+          <!-- <input type="hidden" name="debug" value="1"> -->
+          <!-- <input type="hidden" name="debugEmail" value="ajmayenfayek1@gmail.com"> -->
+
+          <fieldset>
+            <legend>About you</legend>
+            <div class="grid">
+              <div class="field">
+                <label for="first_name">First Name</label>
+                <input id="first_name" maxlength="40" name="first_name" type="text" autocomplete="given-name">
+              </div>
+              <div class="field">
+                <label for="last_name"><abbr class="req" title="required">*</abbr>Last Name</label>
+                <input id="last_name" maxlength="80" name="last_name" type="text" required autocomplete="family-name">
+                <div class="help">Enter your last name.</div>
+              </div>
+              <div class="field">
+                <label for="email"><abbr class="req" title="required">*</abbr>Email</label>
+                <input id="email" maxlength="80" name="email" type="email" required autocomplete="email">
+                <div class="help">Enter a valid email address, e.g. name@company.com.</div>
+              </div>
+              <div class="field">
+                <label for="phone">Phone</label>
+                <input id="phone" maxlength="40" name="phone" type="tel" autocomplete="tel">
+              </div>
+              <div class="field full">
+                <label for="company"><abbr class="req" title="required">*</abbr>Company</label>
+                <input id="company" maxlength="40" name="company" type="text" required autocomplete="organization">
+                <div class="help">Enter your company name.</div>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Your requirement</legend>
+            <div class="grid">
+              <div class="field full" id="equipField">
+                <span class="label"><abbr class="req" title="required">*</abbr>Equipment Type</span>
+                <div class="tiles" role="radiogroup" aria-label="Equipment Type">
+                  <label class="tile">
+                    <input type="radio" name="00Nfj00005MxhMf" value="Chiller" required>
+                    <div class="face"><img src="assets/img/chiller.svg" alt=""><b>Chiller</b><small>Process &amp; cold-store cooling</small></div>
+                  </label>
+                  <label class="tile">
+                    <input type="radio" name="00Nfj00005MxhMf" value="Compressor">
+                    <div class="face"><img src="assets/img/compressor.svg" alt=""><b>Compressor</b><small>Piston &amp; screw air supply</small></div>
+                  </label>
+                  <label class="tile">
+                    <input type="radio" name="00Nfj00005MxhMf" value="Air Dryer">
+                    <div class="face"><img src="assets/img/airdryer.svg" alt=""><b>Air Dryer</b><small>Moisture-free compressed air</small></div>
+                  </label>
+                </div>
+                <div class="help">Choose the type of equipment you need.</div>
+              </div>
+
+              <div class="field">
+                <label for="00Nfj00005MxiLx"><abbr class="req" title="required">*</abbr>Site Postcode</label>
+                <input id="00Nfj00005MxiLx" maxlength="20" name="00Nfj00005MxiLx" type="text" required placeholder="e.g. 3011 AB">
+                <div class="help">Enter the postcode of the installation site.</div>
+              </div>
+              <div class="field">
+                <label for="00Nfj00005MxjEn">Indicative Budget</label>
+                <div class="money"><span>€</span><input id="00Nfj00005MxjEn" name="00Nfj00005MxjEn" type="number" min="0" step="1" placeholder="0"></div>
+                <div class="hint" id="budgetHint">Optional – helps us suggest the right size.</div>
+              </div>
+
+              <div class="field full">
+                <span class="label">Region</span>
+                <div class="pills" role="radiogroup" aria-label="Region">
+                  <label class="pill"><input type="radio" name="00Nfj00005MxmUP" value="Benelux"><span>Benelux</span></label>
+                  <label class="pill"><input type="radio" name="00Nfj00005MxmUP" value="Nordics"><span>Nordics</span></label>
+                  <label class="pill"><input type="radio" name="00Nfj00005MxmUP" value="DACH"><span>DACH</span></label>
+                  <label class="pill"><input type="radio" name="00Nfj00005MxmUP" value="UK &amp; Ireland"><span>UK &amp; Ireland</span></label>
+                </div>
+              </div>
+
+              <div class="field full">
+                <label for="description">Tell us about your requirement</label>
+                <textarea id="description" name="description" maxlength="2000" placeholder="Capacity, site conditions, timing…"></textarea>
+                <div class="counter"><span id="descCount">0</span> / 2000</div>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="actions">
+            <p class="privacy">By sending this form you agree that Helios Equipment Services may contact you about your enquiry.</p>
+            <button class="btn" id="submitBtn" type="submit" name="submit"><span class="spinner" aria-hidden="true"></span><span id="btnText">Send enquiry</span></button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <aside class="side">
+      <section class="card summary" aria-labelledby="sumTitle">
+        <div class="card-head"><h2 id="sumTitle">Enquiry summary</h2></div>
+        <div class="card-body">
+          <dl>
+            <dt>Name</dt><dd id="sName" class="empty">–</dd>
+            <dt>Company</dt><dd id="sCompany" class="empty">–</dd>
+            <dt>Equipment</dt><dd id="sEquip" class="empty">–</dd>
+            <dt>Postcode</dt><dd id="sPost" class="empty">–</dd>
+            <dt>Region</dt><dd id="sRegion" class="empty">–</dd>
+            <dt>Budget</dt><dd id="sBudget" class="empty">–</dd>
+          </dl>
+        </div>
+      </section>
+      <section class="card" aria-labelledby="nextTitle">
+        <div class="card-head"><h2 id="nextTitle">What happens next</h2></div>
+        <div class="card-body">
+          <ol class="steps">
+            <li><span class="n">1</span><span>You receive an email confirming we have your enquiry.</span></li>
+            <li><span class="n">2</span><span>A regional specialist reviews your requirement.</span></li>
+            <li><span class="n">3</span><span>We call you within one working day.</span></li>
+          </ol>
+        </div>
+      </section>
+    </aside>
+  </main>
+
+  <footer class="site">
+    <div class="container">
+      <div class="legal" style="border:0;margin:0;padding:0"><span>© <span id="year"></span> Helios Equipment Services. Demo website.</span><a href="index.html">Back to products</a></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/site.js"></script>
+  <script src="assets/js/enquiry.js"></script>
+</body>
+</html>

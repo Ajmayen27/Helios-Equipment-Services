@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Helios Equipment Services – Industrial Chillers, Compressors &amp; Air Dryers</title>
+  <meta name="description" content="Helios Equipment Services sells, installs and services industrial chillers, compressors and air dryers across Benelux, the Nordics, DACH and the UK &amp; Ireland.">
+  <meta name="theme-color" content="#032d60">
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+  <nav class="nav" aria-label="Main">
+    <div class="container">
+      <a class="logo" href="index.html"><img src="assets/img/logo.svg" alt="" width="32" height="32"><span>Helios Equipment Services<small>Cooling · Compressed air · Service</small></span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navLinks">Menu</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#products">Products</a></li>
+        <li><a href="#service">Service plans</a></li>
+        <li><a href="#regions">Regions</a></li>
+        <li><a class="btn btn-sun btn-sm" href="enquiry.html">Request a quote</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <div>
+        <span class="eyebrow">Industrial cooling &amp; compressed air</span>
+        <h1>Equipment that keeps your plant running, and a team that keeps it that way.</h1>
+        <p class="lead">Helios supplies chillers, compressors and air dryers to cold stores, factories and data centres, and services every unit we install under a coverage plan that fits your site.</p>
+        <div class="hero-actions">
+          <a class="btn btn-sun" href="#products">Explore products</a>
+          <a class="btn btn-ghost" href="enquiry.html">Talk to a specialist</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="float f1"><img src="assets/img/chiller.svg" alt=""></div>
+        <div class="float f2"><img src="assets/img/compressor.svg" alt=""></div>
+        <div class="float f3"><img src="assets/img/airdryer.svg" alt=""></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="stats">
+    <div class="container">
+      <div class="grid4">
+        <div class="stat"><b>8</b><span>Product lines in stock</span></div>
+        <div class="stat"><b>4</b><span>Service regions in Europe</span></div>
+        <div class="stat"><b>1 day</b><span>Specialist call-back</span></div>
+        <div class="stat"><b>24/7</b><span>Critical-plan support</span></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="block reveal" aria-labelledby="famTitle">
+    <div class="container">
+      <div class="section-head">
+        <div><span class="kicker">What we supply</span><h2 id="famTitle">Three families, one service partner</h2>
+        <p>Every unit is installed and maintained by Helios engineers in your region.</p></div>
+      </div>
+      <div class="families">
+        <div class="family"><img src="assets/img/chiller.svg" alt="" width="96"><div><h3>Chillers</h3><p>Air- and water-cooled, 75 to 650 kW.</p><button type="button" data-show-family="Chiller">View chillers →</button></div></div>
+        <div class="family"><img src="assets/img/compressor.svg" alt="" width="96"><div><h3>Compressors</h3><p>Piston and screw, 30 to 160 kW.</p><button type="button" data-show-family="Compressor">View compressors →</button></div></div>
+        <div class="family"><img src="assets/img/airdryer.svg" alt="" width="96"><div><h3>Air Dryers</h3><p>Clean, dry compressed air.</p><button type="button" data-show-family="Air Dryer">View air dryers →</button></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="products" aria-labelledby="prodTitle" style="padding-top:24px">
+    <div class="container">
+      <div class="section-head">
+        <div><span class="kicker">Catalogue</span><h2 id="prodTitle">Our products</h2>
+        <p>Indicative list prices in EUR, excluding installation. Ask for a quote and a specialist will size the right unit for your site.</p></div>
+        <span id="resultCount" class="kicker" aria-live="polite"></span>
+      </div>
+
+      <div class="toolbar">
+        <div class="chips" id="familyChips" role="group" aria-label="Filter by family"></div>
+        <div class="tools">
+          <label class="search"><span class="sr-only">Search products</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            <input id="productSearch" type="search" placeholder="Search, e.g. 200 kW, cold store">
+          </label>
+          <label><span class="sr-only">Sort products</span>
+            <select id="productSort">
+              <option value="featured">Featured</option>
+              <option value="price-asc">Price: low to high</option>
+              <option value="price-desc">Price: high to low</option>
+              <option value="name">Name A–Z</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <div class="products" id="productGrid"></div>
+    </div>
+  </section>
+
+  <section class="block dark" id="service" aria-labelledby="svcTitle">
+    <div class="container">
+      <div class="section-head">
+        <div><span class="kicker" style="color:#ffd27a">After-sales</span><h2 id="svcTitle">Coverage plans for every site</h2>
+        <p>Each installed unit can be covered by a plan. Our engineers are scheduled against real working hours, so the date we give you is a date we can keep.</p></div>
+      </div>
+      <div class="plans">
+        <div class="plan reveal"><h3>Standard</h3><div class="sla">Response next working day</div>
+          <ul><li>Annual preventive maintenance</li><li>Remote diagnostics</li><li>Parts at list price</li></ul>
+          <a class="btn btn-ghost btn-sm" href="enquiry.html">Ask about Standard</a></div>
+        <div class="plan featured reveal"><span class="badge-pop">Most chosen</span><h3>Premium</h3><div class="sla">Response within 8 working hours</div>
+          <ul><li>Two maintenance visits a year</li><li>Priority engineer scheduling</li><li>10 % off parts</li><li>Performance report each visit</li></ul>
+          <a class="btn btn-sm" href="enquiry.html">Ask about Premium</a></div>
+        <div class="plan reveal"><h3>Critical</h3><div class="sla">24/7 response, 4-hour target</div>
+          <ul><li>Quarterly maintenance</li><li>Dedicated regional engineer</li><li>Parts included</li><li>Loan units when available</li></ul>
+          <a class="btn btn-ghost btn-sm" href="enquiry.html">Ask about Critical</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block reveal" id="regions" aria-labelledby="regTitle">
+    <div class="container">
+      <div class="section-head">
+        <div><span class="kicker">Where we work</span><h2 id="regTitle">Regional teams across Europe</h2>
+        <p>Sales and service are organised by region, so your enquiry goes straight to the people who will install and maintain your equipment.</p></div>
+      </div>
+      <div class="regions">
+        <div class="region"><b>Benelux</b><span>Rotterdam service hub</span></div>
+        <div class="region"><b>Nordics</b><span>Gothenburg service hub</span></div>
+        <div class="region"><b>DACH</b><span>Frankfurt service hub</span></div>
+        <div class="region"><b>UK &amp; Ireland</b><span>Manchester service hub</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal" aria-label="Request a quote">
+    <div class="container">
+      <div class="cta">
+        <div><h2>Not sure which unit you need?</h2><p>Tell us about your site and a regional specialist will call you within one working day.</p></div>
+        <a class="btn btn-sun" href="enquiry.html">Request a quote</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site">
+    <div class="container">
+      <div class="cols">
+        <div><a class="logo" href="index.html"><img src="assets/img/logo.svg" alt="" width="32" height="32"><span>Helios Equipment Services</span></a>
+          <p style="font-size:14px;margin-top:12px">Industrial chillers, compressors and air dryers, installed and serviced across Europe.</p></div>
+        <div><h4>Products</h4><ul><li><a href="index.html?family=Chiller#products">Chillers</a></li><li><a href="index.html?family=Compressor#products">Compressors</a></li><li><a href="index.html?family=Air%20Dryer#products">Air Dryers</a></li></ul></div>
+        <div><h4>Service</h4><ul><li><a href="#service">Coverage plans</a></li><li><a href="#regions">Regions</a></li></ul></div>
+        <div><h4>Contact</h4><ul><li><a href="enquiry.html">Request a quote</a></li><li>Mon–Fri, 08:00–17:00 CET</li></ul></div>
+      </div>
+      <div class="legal"><span>© <span id="year"></span> Helios Equipment Services. Demo website.</span><span>Product images are illustrations.</span></div>
+    </div>
+  </footer>
+
+  <!-- Product detail dialog -->
+  <div class="modal" id="productModal" role="dialog" aria-modal="true" aria-labelledby="mName">
+    <div class="modal-card">
+      <button class="modal-close" type="button" aria-label="Close">×</button>
+      <div class="modal-media"><img id="mImg" src="" alt=""></div>
+      <div class="modal-body">
+        <span class="product-code" id="mCode"></span>
+        <h3 id="mName"></h3>
+        <p id="mSummary" style="color:var(--muted);margin:0"></p>
+        <table class="spec-table"><tbody id="mSpecs"></tbody></table>
+        <div class="kicker" style="margin-bottom:6px">Typical uses</div>
+        <div class="uses" id="mUses"></div>
+        <a class="btn" id="mQuote" href="enquiry.html">Request a quote for this unit</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/site.js"></script>
+  <script src="assets/js/catalog.js"></script>
+</body>
+</html>

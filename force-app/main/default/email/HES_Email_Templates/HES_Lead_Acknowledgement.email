@@ -1,0 +1,11 @@
+Hello {!Lead.FirstName},
+
+Thank you for contacting Helios Equipment Services about a {!Lead.Equipment_Type__c}.
+
+We have received your enquiry for the site at postcode {!Lead.Site_Postcode__c}. One of our specialists for your region will call you within one working day to discuss your requirements.
+
+If you need us sooner, simply reply to this email.
+
+Kind regards,
+Helios Equipment Services
+Sales Team

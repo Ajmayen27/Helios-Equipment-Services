@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Automatic reply to a web enquiry (SAL-01), sent by the HES Lead Acknowledgement email alert.</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>HES Lead Acknowledgement</name>
+    <style>none</style>
+    <subject>Thanks for your enquiry, {!Lead.FirstName}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>
