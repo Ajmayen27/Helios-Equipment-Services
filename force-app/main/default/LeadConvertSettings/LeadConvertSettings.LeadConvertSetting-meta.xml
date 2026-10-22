@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LeadConvertSettings xmlns="http://soap.sforce.com/2006/04/metadata">
+    <allowOwnerChange>true</allowOwnerChange>
+    <objectMapping>
+        <inputObject>Lead</inputObject>
+        <mappingFields>
+            <inputField>Region__c</inputField>
+            <outputField>Region__c</outputField>
+        </mappingFields>
+        <outputObject>Account</outputObject>
+    </objectMapping>
+    <objectMapping>
+        <inputObject>Lead</inputObject>
+        <mappingFields>
+            <inputField>Equipment_Type__c</inputField>
+            <outputField>Equipment_Type__c</outputField>
+        </mappingFields>
+        <mappingFields>
+            <inputField>Indicative_Budget__c</inputField>
+            <outputField>Indicative_Budget__c</outputField>
+        </mappingFields>
+        <mappingFields>
+            <inputField>Site_Postcode__c</inputField>
+            <outputField>Site_Postcode__c</outputField>
+        </mappingFields>
+        <outputObject>Opportunity</outputObject>
+    </objectMapping>
+    <opportunityCreationOptions>VisibleOptional</opportunityCreationOptions>
+</LeadConvertSettings>
