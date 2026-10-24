@@ -1,5 +1,7 @@
 # Helios Equipment Services – demo website
 
+Website Link : https://capable-frangollo-3eba77.netlify.app/#products
+
 Static website (no build step) with a product catalogue and the Salesforce Web-to-Lead enquiry form (SAL-01).
 
 ## Pages
@@ -7,6 +9,7 @@ Static website (no build step) with a product catalogue and the Salesforce Web-t
 |---|---|
 | `index.html` | Home page: hero, product families, product catalogue (filter, search, sort, detail dialog), service plans, regions |
 | `enquiry.html` | Web-to-Lead form. Opened from a product (`enquiry.html?product=CH-200`) it pre-selects the equipment type and fills the description |
+| `service.html` | Web-to-Case service request form (INT-02); serial number is merged into Description |
 | `thank-you.html` | Page Salesforce returns visitors to after submitting (`retURL`) |
 | `404.html` | Not-found page (used by Netlify automatically) |
 
@@ -21,3 +24,5 @@ In `enquiry.html`: the form `action`, `oid`, `lead_source = Web`, and the field 
 
 ## Deploy to Netlify
 Drag this folder (or the zip) onto https://app.netlify.com/drop, or onto your existing site's **Deploys** tab.
+
+
