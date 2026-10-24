@@ -22,7 +22,7 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>HES Generic Error</shortDescription>
-        <value>Something went wrong while saving. Your administrator has been notified.</value>
+        <value>Something went wrong while saving. Please try again or contact your administrator.</value>
     </labels>
     <labels>
         <fullName>HES_Msg_No_Coverage_Access</fullName>
