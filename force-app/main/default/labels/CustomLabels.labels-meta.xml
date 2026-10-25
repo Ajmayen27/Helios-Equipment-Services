@@ -40,4 +40,12 @@
         <shortDescription>HES Unscheduled  Message</shortDescription>
         <value>This engineer is not scheduled, so no work has been planned.</value>
     </labels>
+    <labels>
+        <fullName>Coverage_activation_failed</fullName>
+        <categories>HES,SVC-03,Error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Coverage activation failed</shortDescription>
+        <value>This plan could not be activated because its equipment could not be updated. Please try again or contact your administrator.</value>
+    </labels>
 </CustomLabels>
