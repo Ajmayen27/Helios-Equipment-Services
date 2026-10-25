@@ -54,7 +54,7 @@
     <section class="card" aria-labelledby="formTitle">
       <div class="card-head">
         <h2 id="formTitle">Your service request</h2>
-        <span class="progress-label" id="progressLabel">0 of 5 required fields</span>
+        <span class="progress-label" id="progressLabel">0 of 6 required fields</span>
       </div>
       <div class="progress" aria-hidden="true"><i id="progressBar"></i></div>
 
@@ -68,9 +68,10 @@
                retURL is set to this site's thank-you page by the script below. -->
           <input type="hidden" name="orgid" value="00Dfj00000klaTl">
           <input type="hidden" id="retURL" name="retURL" value="https://sprightly-pothos-2e1dfb.netlify.app/thank-you.html?type=service">
-          <!-- After WBS 6-01: add the Technical case record type here, e.g.
-               <input type="hidden" name="recordType" value="012XXXXXXXXXXXX">
-               The ID lives only in this page, never in formulas, flows or Apex. -->
+          <!-- Case record type = Technical (WBS 6-01, SVC-01): every website service request is an equipment fault.
+               The ID lives only in this page, never in formulas, flows or Apex. If the org is rebuilt, update it from
+               Setup › Object Manager › Case › Record Types › Technical (ID in the address bar). -->
+          <input type="hidden" name="recordType" value="012fj000008k6sD">
 
           <!-- Testing only: remove the comment marks to see Salesforce's debug page. Put them back before going live. -->
           <!-- <input type="hidden" name="debug" value="1"> -->
@@ -137,6 +138,16 @@
             <legend>The problem</legend>
             <div class="grid">
               <div class="field full">
+                <span class="label"><abbr class="req" title="required">*</abbr>Type of request</span>
+                <!-- Standard Case Type field. Values must match the Technical record type's Type values (WBS 6-01). -->
+                <div class="pills" role="radiogroup" aria-label="Type of request">
+                  <label class="pill"><input type="radio" name="type" value="Breakdown" required><span>Breakdown – something is not working</span></label>
+                  <label class="pill"><input type="radio" name="type" value="Maintenance"><span>Maintenance – planned service visit</span></label>
+                  <label class="pill"><input type="radio" name="type" value="Installation"><span>Installation – new or moved unit</span></label>
+                </div>
+                <div class="help">Choose the type of request.</div>
+              </div>
+              <div class="field full">
                 <label for="subject"><abbr class="req" title="required">*</abbr>Subject</label>
                 <input id="subject" maxlength="80" name="subject" type="text" required placeholder="e.g. Chiller making a loud grinding noise">
                 <div class="help">Give your request a short title.</div>
@@ -175,6 +186,7 @@
             <dt>Company</dt><dd id="sCompany" class="empty">–</dd>
             <dt>Equipment</dt><dd id="sEquip" class="empty">–</dd>
             <dt>Serial</dt><dd id="sSerial" class="empty">–</dd>
+            <dt>Request</dt><dd id="sType" class="empty">–</dd>
             <dt>Subject</dt><dd id="sSubject" class="empty">–</dd>
             <dt>Urgency</dt><dd id="sUrg" class="empty">–</dd>
           </dl>
@@ -206,7 +218,7 @@
     (function () {
       var form = document.getElementById('caseForm');
       var EQUIP = '00Nfj00005N7fBV';
-      var required = ['name', 'email', EQUIP, 'subject', 'details'];
+      var required = ['name', 'email', EQUIP, 'type', 'subject', 'details'];
       if (/^https?:$/.test(location.protocol)) {
         document.getElementById('retURL').value = location.origin + location.pathname.replace(/[^/]*$/, '') + 'thank-you.html?type=service';
       }
@@ -226,7 +238,7 @@
         document.getElementById('progressLabel').textContent = done + ' of ' + required.length + ' required fields';
         if (done === required.length) document.getElementById('formAlert').classList.remove('show');
         set('sName', val('name')); set('sCompany', val('company')); set('sEquip', val(EQUIP));
-        set('sSerial', val('serial')); set('sSubject', val('subject')); set('sUrg', val('priority'));
+        set('sSerial', val('serial')); set('sType', val('type')); set('sSubject', val('subject')); set('sUrg', val('priority'));
         document.getElementById('descCount').textContent = val('details').length;
         required.forEach(function (n) { var f = fieldOf(n); if (f.classList.contains('has-error') && ok(n)) f.classList.remove('has-error'); });
       }

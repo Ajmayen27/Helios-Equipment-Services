@@ -1,8 +1,9 @@
 # Helios Equipment Services – demo website
 
-Website Link : https://capable-frangollo-3eba77.netlify.app/#products
-
 Static website (no build step) with a product catalogue and the Salesforce Web-to-Lead enquiry form (SAL-01).
+
+
+Website live link: https://cute-eclair-e54799.netlify.app/
 
 ## Pages
 | File | What it does |
@@ -22,7 +23,8 @@ In `enquiry.html`: the form `action`, `oid`, `lead_source = Web`, and the field 
 `00Nfj00005MxjEn` (Indicative Budget), `00Nfj00005MxmUP` (Region).
 `retURL` is set automatically to `<this site>/thank-you.html`.
 
+In `service.html`: the form `action`, `orgid`, `recordType` (`012fj000008k6sD` = Case record type Technical, WBS 6-01),
+and the field names `name`, `email`, `phone`, `company`, `subject`, `description`, `priority` and `00Nfj00005N7fBV` (Equipment Type), `type` (Case Type: Breakdown, Maintenance or Installation).
+
 ## Deploy to Netlify
 Drag this folder (or the zip) onto https://app.netlify.com/drop, or onto your existing site's **Deploys** tab.
-
-

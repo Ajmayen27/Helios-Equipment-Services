@@ -11,6 +11,15 @@
             </criteriaItems>
         </ruleEntry>
         <ruleEntry>
+            <assignedTo>Billing</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Billing</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
             <assignedTo>Benelux_Technical</assignedTo>
             <assignedToType>Queue</assignedToType>
             <criteriaItems>
