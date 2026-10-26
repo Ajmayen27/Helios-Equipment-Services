@@ -24,4 +24,20 @@
         <senderType>OrgWideEmailAddress</senderType>
         <template>HES_Email_Templates/HES_Case_Ack_Web</template>
     </alerts>
+    <alerts>
+        <fullName>HES_Case_Satisfaction</fullName>
+        <description>HES Case Satisfaction</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ContactId</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <field>SuppliedEmail</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>ajmayen420@gmail.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>HES_Email_Templates/HES_Case_Satisfaction</template>
+    </alerts>
 </Workflow>
