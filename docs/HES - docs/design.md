@@ -146,3 +146,24 @@ Support Settings › "Show Closed Statuses in Case Status Field" is on so engine
 | D8 | Engineers may hand their own case back to a queue | Real-world need; SVC-02 still applies | 6-02 |
 | D9 | Future segments removed by Apex only | One owner per rule | 6-06, 7-06 |
 | D10 | Flow API names | Older flows `Object_AfterSave`; newer ones `Object_Before_Save` / `Object_After_Save` (Salesforce default). Confirm exact names with `sf org list metadata --metadata-type Flow`; see automation-inventory.md | all |
+
+
+Bulk Safe Test: 
+
+PS C:\src\HES> sf apex run --file scripts/apex/bulk-test.apex | Select-String "BULK"
+
+Execute Anonymous: // 7-04 bulk check (CAP-07). Change N to 1, then 50, and compare the numbers.
+Execute Anonymous:         cs.add(new Case(Subject = 'Bulk test ' + i, RecordTypeId = rt, OwnerId = queueId,
+Execute Anonymous:     System.debug('BULK N=' + N
+Execute Anonymous:     System.debug('BULK ERROR: ' + e.getMessage());
+16:34:01.643 (3637849049)|USER_DEBUG|[21]|DEBUG|BULK N=50 &#124; SOQL 8 (limit 100) &#124; DML statements 3 &#124; DML rows 168 &#124; CPU ms 259 &#124; segments created 68
+
+
+PS C:\src\HES> sf apex run --file scripts/apex/bulk-test.apex | Select-String "BULK"
+
+Execute Anonymous: // 7-04 bulk check (CAP-07). Change N to 1, then 50, and compare the numbers.
+Execute Anonymous:         cs.add(new Case(Subject = 'Bulk test ' + i, RecordTypeId = rt, OwnerId = queueId,
+Execute Anonymous:     System.debug('BULK N=' + N
+Execute Anonymous:     System.debug('BULK ERROR: ' + e.getMessage());
+16:37:13.40 (588945346)|USER_DEBUG|[21]|DEBUG|BULK N=1 &#124; SOQL 8 (limit 100) &#124; DML statements 3 &#124; DML rows 5 &#124; CPU ms 93 &#124; segments created 3
+

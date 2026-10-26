@@ -7,5 +7,7 @@
     <fields>Priority</fields>
     <fields>Coverage_Position__c</fields>
     <fields>Equipment__c</fields>
+    <fields>Schedule_Status__c</fields>
+    <fields>Planned_Finish__c</fields>
     <label>Case Technical Compact</label>
 </CompactLayout>
