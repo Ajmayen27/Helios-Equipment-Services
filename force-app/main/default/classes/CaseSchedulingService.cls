@@ -10,7 +10,7 @@ public inherited sharing class CaseSchedulingService {
     public static void planCases(Set<Id> caseIds) {
         Date t = today();
         Integer horizon = Integer.valueOf(HES_Setting__mdt.getInstance('Default').Horizon_Days__c);
-        Date horizonEnd = t.addDays(horizon);
+        Date horizonEnd = t.addDays(horizon - 1);
 
         List<Case> cases = [SELECT Id, OwnerId, Estimated_Effort__c FROM Case WHERE Id IN :caseIds];
         Set<Id> engineerIds = new Set<Id>();
