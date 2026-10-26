@@ -48,4 +48,12 @@
         <shortDescription>Coverage activation failed</shortDescription>
         <value>This plan could not be activated because its equipment could not be updated. Please try again or contact your administrator.</value>
     </labels>
+    <labels>
+        <fullName>HES_Duplicate_case_skill</fullName>
+        <categories>HES,SVC-04,Error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>HES Duplicate case skill</shortDescription>
+        <value>This skill is already recorded on this case.</value>
+    </labels>
 </CustomLabels>

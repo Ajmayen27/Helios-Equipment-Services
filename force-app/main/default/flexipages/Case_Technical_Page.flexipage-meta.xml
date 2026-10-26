@@ -207,7 +207,10 @@
                     <name>relatedListFieldAliases</name>
                     <valueList>
                         <valueListItems>
-                            <value>NAME</value>
+                            <value>Skill__c.NAME</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Skill__c.Description__c</value>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
