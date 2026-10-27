@@ -56,4 +56,12 @@
         <shortDescription>HES Duplicate case skill</shortDescription>
         <value>This skill is already recorded on this case.</value>
     </labels>
+    <labels>
+        <fullName>HES_Nightly_Rollforward_Failed</fullName>
+        <categories>HES,CAP-06,Error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Nightly roll-forward failed</shortDescription>
+        <value>Nightly roll-forward of work segments failed. See the task description for details.</value>
+    </labels>
 </CustomLabels>
