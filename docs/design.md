@@ -11,3 +11,4 @@ Rules for both components:
 - Apex controllers are `with sharing` and query `WITH USER_MODE`, so users see only what their access allows.
 - User-facing text comes from custom labels (HES_Lbl_*).
 - Built with SLDS base components (lightning-card, lightning-badge, an SLDS table), so they look like standard Salesforce.
+- Review check for 8-02 to 8-07: the LWC Apex controllers contain only SELECT queries (no insert, update, delete), and the JavaScript calls no Apex method that writes data.
