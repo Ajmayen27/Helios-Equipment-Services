@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Home page of the Helios Service app for dispatchers and service managers: engineer capacity calendar (LWC-01), plus report chart and case list view added in 9-06.</description>
+    <flexiPageRegions>
+        <name>header</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>cardTitle</name>
+                    <value>Engineer capacity</value>
+                </componentInstanceProperties>
+                <componentName>engineerCapacityCalendar</componentName>
+                <identifier>c_engineerCapacityCalendar</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>main</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <name>sidebar</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <masterLabel>Helios Dispatcher Home</masterLabel>
+    <template>
+        <name>runtime_cdp:cdpHomeDesktopTemplate</name>
+    </template>
+    <type>HomePage</type>
+</FlexiPage>
