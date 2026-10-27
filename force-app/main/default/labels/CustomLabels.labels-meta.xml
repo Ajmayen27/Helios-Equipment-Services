@@ -64,4 +64,44 @@
         <shortDescription>Nightly roll-forward failed</shortDescription>
         <value>Nightly roll-forward of work segments failed. See the task description for details.</value>
     </labels>
+    <labels>
+        <fullName>HES_Lbl_Needs_Replanning</fullName>
+        <categories>HES,LWC-02</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Needs replanning badge</shortDescription>
+        <value>Needs replanning</value>
+    </labels>
+    <labels>
+        <fullName>HES_Lbl_No_Engineers</fullName>
+        <categories>HES,LWC-01</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>No engineers this week</shortDescription>
+        <value>No engineers to show for this week.</value>
+    </labels>
+    <labels>
+        <fullName>HES_Lbl_No_Work_Planned</fullName>
+        <categories>HES,LWC-02</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>No work planned</shortDescription>
+        <value>No work planned yet.</value>
+    </labels>
+    <labels>
+        <fullName>HES_Lbl_Not_Scheduled</fullName>
+        <categories>HES,LWC-01</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Not scheduled badge</shortDescription>
+        <value>Not scheduled</value>
+    </labels>
+    <labels>
+        <fullName>HES_Lbl_Part_Time</fullName>
+        <categories>HES,LWC-01</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Part-time badge</shortDescription>
+        <value>Part-time</value>
+    </labels>
 </CustomLabels>
