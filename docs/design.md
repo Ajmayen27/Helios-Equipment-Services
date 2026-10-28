@@ -1,5 +1,5 @@
 
-## Tool selection – custom components (LWC-01 to LWC-03, WBS 8-01)
+## Tool selection ï¿½ custom components (LWC-01 to LWC-03, WBS 8-01)
 
 | Need | Standard option considered | Why it is not enough | Decision |
 |---|---|---|---|
@@ -12,3 +12,12 @@ Rules for both components:
 - User-facing text comes from custom labels (HES_Lbl_*).
 - Built with SLDS base components (lightning-card, lightning-badge, an SLDS table), so they look like standard Salesforce.
 - Review check for 8-02 to 8-07: the LWC Apex controllers contain only SELECT queries (no insert, update, delete), and the JavaScript calls no Apex method that writes data.
+
+## Dashboard running users (AN-05, WBS 9-05)
+
+| Dashboard | View Dashboard As | Reason | Trade-off |
+|---|---|---|---|
+| Service Operations | Me (admin owner, sees all cases) | Dispatchers and service managers must see workload across every queue, engineer and region to balance work. A viewer-based dashboard would show an engineer only his own cases and hide queue backlog. | Every viewer with access to the HES Service Dashboards folder sees team-wide totals. Mitigation: folder shared only with the Service Manager role hierarchy and HES Leadership; clicking a widget opens the source report, which runs as the viewer and so still respects record sharing (an engineer drills into his own cases only). |
+| Sales Performance | The dashboard viewer | Reps must see only their own pipeline (OWD Opportunity Private); managers see their team through the role hierarchy; Finance sees what the "Pipeline to finance" sharing rule gives them. | Each viewer sees a different picture, and the dashboard refreshes per viewer. Accepted, because pipeline data is commercially sensitive. |
+
+Note: with only 4 licences there is no separate Service Manager user, so the admin is the running user. In production this would be a dedicated Service Manager user, not an administrator.
