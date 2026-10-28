@@ -19,3 +19,5 @@
 
 Defect found and fixed during testing: horizon allowed 61 days; fixed to `addDays(horizon - 1)` (commit [WBS:7-03] fix(CAP-03)).
 | QA-02 | All local Apex tests (27/10/2026) | RunLocalTests | 17/17 pass, 100% coverage | Pass | CAP/all-tests-27-10-2026.txt |
+
+AN-02-1 | Summary report (9-02) | Cases, Technical, last 12 months, grouped region > month | Covered % per group via summary formula (Benelux Oct 2026: 6 / 672 = 1%) | Pass | evidence/AN-02-covered.png |
