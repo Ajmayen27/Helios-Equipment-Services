@@ -126,5 +126,20 @@
         <shortDescription>AI-02: label of the reply draft box</shortDescription>
         <value>Draft reply</value>
     </labels>
+     
+         <labels>
+        <fullName>HES_Agent_Case_Created</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AI-07: agent confirmation after creating a case</shortDescription>
+        <value>Case {0} has been created and sent to the service team.</value>
+    </labels>
+    <labels>
+        <fullName>HES_Err_Generic</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Generic error shown to users when an action fails</shortDescription>
+        <value>Something went wrong. Please try again or contact your administrator.</value>
+    </labels>
 
 </CustomLabels>
