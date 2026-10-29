@@ -142,4 +142,12 @@
         <value>Something went wrong. Please try again or contact your administrator.</value>
     </labels>
 
+        <labels>
+        <fullName>HES_Agent_No_Article</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AI-04: agent answer when no knowledge article matches</shortDescription>
+        <value>No Helios knowledge article matches this question. I can raise a new case so an engineer can help.</value>
+    </labels>
+
 </CustomLabels>
