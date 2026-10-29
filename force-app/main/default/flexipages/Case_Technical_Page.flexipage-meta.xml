@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
-    <description
-  >Record page for Technical cases: equipment, required skills, effort and scheduling (SVC-01).</description>
+    <description>Record page for Technical cases: equipment, required skills, effort and scheduling (SVC-01).</description>
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
@@ -232,6 +231,38 @@
     </flexiPageRegions>
     <flexiPageRegions>
         <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>generativePromptTemplate</name>
+                    <value>HES_Case_Summary</value>
+                </fieldInstanceProperties>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.AI_Summary__c</fieldItem>
+                <identifier>RecordAI_Summary_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-afcd80c2-098c-466b-b6aa-57f7dac97969</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-afcd80c2-098c-466b-b6aa-57f7dac97969</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-25bf3440-a113-4208-bb67-bbff57485b23</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
             <componentInstance>
                 <componentName>force:detailPanel</componentName>
                 <identifier>force_detailPanel</identifier>
@@ -269,6 +300,24 @@
             <componentInstance>
                 <componentName>caseScheduleTimeline</componentName>
                 <identifier>c_caseScheduleTimeline</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-25bf3440-a113-4208-bb67-bbff57485b23</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>AI Summary</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
