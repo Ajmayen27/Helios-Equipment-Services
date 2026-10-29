@@ -104,4 +104,27 @@
         <shortDescription>Part-time badge</shortDescription>
         <value>Part-time</value>
     </labels>
+
+    <labels>
+        <fullName>HES_AI_Draft_Failed</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AI-02: shown when the reply draft fails</shortDescription>
+        <value>The reply draft could not be created. Please try again later or write the reply manually.</value>
+    </labels>
+    <labels>
+        <fullName>HES_AI_Draft_Review</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AI-02: hint above the reply draft</shortDescription>
+        <value>Review and edit this draft, then copy it into your email to the customer. Nothing has been sent.</value>
+    </labels>
+    <labels>
+        <fullName>HES_AI_Draft_Field</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AI-02: label of the reply draft box</shortDescription>
+        <value>Draft reply</value>
+    </labels>
+
 </CustomLabels>
