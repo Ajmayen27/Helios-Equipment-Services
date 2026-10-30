@@ -19,11 +19,10 @@ public with sharing class CapacityCalendarController {
         Date weekEnd = weekStart.addDays(4);
         List<Boolean> working = new List<Boolean>();
         for (Integer i = 0; i < 5; i++) { working.add(WorkingCalendar.isWorkingDay(weekStart.addDays(i))); }   // cached, 1 query
-
         Map<Id, EngineerRow> rows = new Map<Id, EngineerRow>();
-        for (User u : [SELECT Id, Name, Default_Working_Hours__c, Is_Scheduled__c FROM User
-                       WHERE IsActive = true AND Default_Working_Hours__c != null
-                       WITH USER_MODE ORDER BY Name]) {
+            for (User u : [SELECT Id, Name, Default_Working_Hours__c, Is_Scheduled__c FROM User
+                       WHERE IsActive = true AND UserType = 'Standard' AND Default_Working_Hours__c != null
+                      WITH USER_MODE ORDER BY Name]) {
             EngineerRow r = new EngineerRow();
             r.engineerId = u.Id;
             r.name = u.Name;

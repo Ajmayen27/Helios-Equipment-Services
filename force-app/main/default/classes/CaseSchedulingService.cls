@@ -2,6 +2,7 @@
  * Fill-and-spill capacity planning (CAP-01 to CAP-05, CAP-07).
  * inherited sharing: from the trigger it must see every engineer's bookings to avoid double-booking.
  * Bulk-safe: a fixed number of queries and DML statements, whatever the number of cases.
+* Engineers are active standard users with Is Scheduled; internal users (e.g. the automated process user) are never planned.
  */
 public inherited sharing class CaseSchedulingService {
     @TestVisible private static Date todayOverride;
@@ -15,8 +16,8 @@ public inherited sharing class CaseSchedulingService {
         List<Case> cases = [SELECT Id, OwnerId, Estimated_Effort__c FROM Case WHERE Id IN :caseIds];
         Set<Id> engineerIds = new Set<Id>();
         for (Case c : cases) { engineerIds.add(c.OwnerId); }
-        Map<Id, User> engineers = new Map<Id, User>(
-            [SELECT Id, Default_Working_Hours__c, Is_Scheduled__c FROM User WHERE Id IN :engineerIds]);
+               Map<Id, User> engineers = new Map<Id, User>(
+           [SELECT Id, Default_Working_Hours__c, Is_Scheduled__c FROM User WHERE Id IN :engineerIds AND UserType = 'Standard']);
 
         // 1. Replanning starts clean: remove this case's future segments (today and earlier stay as history).
         delete [SELECT Id FROM Work_Segment__c WHERE Case__c IN :caseIds AND Planned_Date__c > :t];
