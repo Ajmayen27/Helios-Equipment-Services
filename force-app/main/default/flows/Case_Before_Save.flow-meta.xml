@@ -3,6 +3,23 @@
     <apiVersion>68.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
+        <description>ACC-02-R1: Case.Region__c = Account.Region__c; used by the regional case sharing rules.</description>
+        <name>Copy_Region_from_Account</name>
+        <label>Copy Region from Account</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Region__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Account.Region__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>What_Happened</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <description>Closes the case with Reason Junk so no queue, acknowledgement or dispatcher sees it (INT-06).</description>
         <name>Mark_As_Junk</name>
         <label>Mark As Junk</label>
@@ -102,6 +119,39 @@
         </rules>
     </decisions>
     <decisions>
+        <description>ACC-02-R1: copy the account&apos;s region onto the case when the account changes or the region is still empty.</description>
+        <name>Region_Needs_Setting</name>
+        <label>Region Needs Setting</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>What_Happened</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Region OK</defaultConnectorLabel>
+        <rules>
+            <name>Set_Region</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.AccountId</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Region__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_Region_from_Account</targetReference>
+            </connector>
+            <label>Set Region</label>
+        </rules>
+    </decisions>
+    <decisions>
         <description>Routes new cases to the junk check. A Reopened outcome is added in 6-07.</description>
         <name>What_Happened</name>
         <label>What Happened?</label>
@@ -142,7 +192,7 @@
             <label>Reopened</label>
         </rules>
     </decisions>
-    <description>Technical case back to Unscheduled, Needs Replanning ticked, planned dates cleared (SVC-06). Replanning itself happens on the next owner or effort change (scheduling service, 7-02).</description>
+    <description>Version: adds Case Region from Account (ACC-02-R1).</description>
     <ends>
         <name>END_ELEMENT_1</name>
         <locationX>0</locationX>
@@ -253,7 +303,7 @@
         <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>What_Happened</targetReference>
+            <targetReference>Region_Needs_Setting</targetReference>
         </connector>
         <filterFormula>OR( ISNEW(), ISCHANGED({!$Record.Status}) )</filterFormula>
         <object>Case</object>

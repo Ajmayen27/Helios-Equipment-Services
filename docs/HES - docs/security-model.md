@@ -92,3 +92,12 @@ Six Case queues, each with members **Role: Service Dispatcher** and **User: admi
 ## Who can change a case owner
 - Dispatcher and Service Manager: queue members / sharing; they assign work.
 - Field Engineer: only cases he owns (standard owner right). Design decision: an engineer may hand his own case back to a queue; the SVC-02 rule still blocks giving it to another engineer without effort. A stricter "Assign Cases" custom permission was considered and not built (not required by the brief).
+
+### Regional service groups (ACC-02-R1)
+| Group | Members | Used by |
+|---|---|---|
+| HES Benelux Service | Benelux dispatchers (test: Sam Rep) | Queue Benelux Technical; sharing rule "Benelux open cases to Benelux service" |
+| HES Nordics Service | Nordics dispatchers | Nordics sharing rule (+ queue when created) |
+| HES DACH Service | DACH dispatchers | DACH sharing rule (+ queue when created) |
+| HES UKI Service | UK & Ireland dispatchers | UKI sharing rule (+ queue when created) |
+Grant Access Using Hierarchies: on (Service Manager sees the same cases).

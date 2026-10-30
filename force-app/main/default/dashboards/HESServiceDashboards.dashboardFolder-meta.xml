@@ -13,7 +13,7 @@
     <folderShares>
         <accessLevel>View</accessLevel>
         <sharedTo>Service_Manager</sharedTo>
-        <sharedToType>RoleAndSubordinatesInternal</sharedToType>
+        <sharedToType>Role</sharedToType>
     </folderShares>
     <name>HES Service Dashboards</name>
 </DashboardFolder>

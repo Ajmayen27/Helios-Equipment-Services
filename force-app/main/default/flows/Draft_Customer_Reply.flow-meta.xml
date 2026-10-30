@@ -4,8 +4,8 @@
         <description>Calls the HES Customer Reply Draft prompt template (AI-02) for the current case.</description>
         <name>Draft_Reply</name>
         <label>Draft Reply</label>
-        <locationX>176</locationX>
-        <locationY>242</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <actionName>HES_Customer_Reply_Draft</actionName>
         <actionType>generatePromptResponse</actionType>
         <connector>
@@ -25,6 +25,7 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <description>AI-02: Calls the HES Customer Reply Draft prompt template for the current case and shows the draft for the agent to review and copy. Nothing is sent automatically. Launched by the Case quick action Draft Customer Reply.</description>
     <environments>Default</environments>
     <interviewLabel>Draft Customer Reply {!$Flow.CurrentDateTime}</interviewLabel>
@@ -52,8 +53,8 @@
         <description>Reads the case the quick action was started from.</description>
         <name>Get_Case</name>
         <label>Get Case</label>
-        <locationX>176</locationX>
-        <locationY>134</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Draft_Reply</targetReference>
@@ -77,8 +78,8 @@
         <description>Shown when reading the case or calling the prompt template fails.</description>
         <name>Draft_Failed</name>
         <label>Draft Failed</label>
-        <locationX>440</locationX>
-        <locationY>350</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -86,6 +87,14 @@
             <name>DraftFailedMessage</name>
             <fieldText>&lt;p&gt;{!$Label.HES_AI_Draft_Failed}&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
@@ -94,8 +103,8 @@
         <description>Shows the AI draft in an editable box for the agent to review and copy.</description>
         <name>Reply_Draft</name>
         <label>Reply Draft</label>
-        <locationX>176</locationX>
-        <locationY>350</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -103,22 +112,37 @@
             <name>ReviewHint</name>
             <fieldText>&lt;p&gt;{!$Label.HES_AI_Draft_Review}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>DraftReplyText</name>
-            <dataType>String</dataType>
             <defaultValue>
                 <elementReference>Draft_Reply.promptResponse</elementReference>
             </defaultValue>
             <fieldText>{!$Label.HES_AI_Draft_Field}</fieldText>
             <fieldType>LargeTextArea</fieldType>
             <isRequired>false</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
     </screens>
     <start>
-        <locationX>50</locationX>
+        <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Case</targetReference>
