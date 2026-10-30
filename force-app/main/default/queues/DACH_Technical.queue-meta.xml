@@ -4,9 +4,9 @@
     <doesSendEmailToMembers>false</doesSendEmailToMembers>
     <name>DACH Technical</name>
     <queueMembers>
-        <roles>
-            <role>Service_Dispatcher</role>
-        </roles>
+        <publicGroups>
+            <publicGroup>HES_DACH_Service</publicGroup>
+        </publicGroups>
         <users>
             <user>ajmayenfayek1.f678ebd77759@agentforce.com</user>
         </users>

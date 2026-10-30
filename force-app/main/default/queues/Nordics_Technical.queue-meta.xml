@@ -4,9 +4,9 @@
     <doesSendEmailToMembers>false</doesSendEmailToMembers>
     <name>Nordics Technical</name>
     <queueMembers>
-        <roles>
-            <role>Service_Dispatcher</role>
-        </roles>
+        <publicGroups>
+            <publicGroup>HES_Nordics_Service</publicGroup>
+        </publicGroups>
         <users>
             <user>ajmayenfayek1.f678ebd77759@agentforce.com</user>
         </users>
