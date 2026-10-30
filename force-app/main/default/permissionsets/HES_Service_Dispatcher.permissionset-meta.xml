@@ -12,6 +12,18 @@
         <apexClass>CaseScheduleController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
+    <classAccesses>
+        <apexClass>CoverageLookupAction</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>CreateCaseFromConversationAction</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SearchServiceArticlesAction</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
     <description>Dispatcher: creates and assigns service cases, sets effort and skills, sees engineer capacity.</description>
     <fieldPermissions>
         <editable>false</editable>
