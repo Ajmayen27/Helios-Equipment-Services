@@ -5,16 +5,105 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>actionNames</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>Case.Draft_Customer_Reply</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Edit</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>FeedItem.ContentPost</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>FeedItem.LinkPost</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>FeedItem.PollPost</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>SearchInventory</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>ChangeRecordType</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>headlessPricingAction</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>MergeCase</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>ChangeOwnerOne</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Share</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Submit</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>CaseHierarchy</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>ScheduleAppointment</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>SendSurveyInvitation</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>ReviewDocumentAction</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Clone</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>ResolveCase</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>AddToActionableList</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>CreateGroupAction</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>MassAccept</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>StartOutboundConversation</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>PrintableView</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>OmniChannelRouteWork</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Delete</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>RecordShareHierarchy</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>AssignRecordLabel</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>ArticulateAction</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>collapsed</name>
                     <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>enableActionsConfiguration</name>
-                    <value>false</value>
+                    <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>enableActionsInNative</name>
-                    <value>false</value>
+                    <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>hideChatterActions</name>
