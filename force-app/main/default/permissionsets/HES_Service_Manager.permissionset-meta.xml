@@ -21,6 +21,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>ReplyDraftService</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>SearchServiceArticlesAction</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -345,6 +349,10 @@
         <field>Opportunity.Type</field>
         <readable>true</readable>
     </fieldPermissions>
+    <flowAccesses>
+        <enabled>true</enabled>
+        <flow>Draft_Customer_Reply</flow>
+    </flowAccesses>
     <hasActivationRequired>false</hasActivationRequired>
     <label>HES Service Manager</label>
     <objectPermissions>
