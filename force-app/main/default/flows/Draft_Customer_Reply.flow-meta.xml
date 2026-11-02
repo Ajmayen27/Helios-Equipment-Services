@@ -29,6 +29,7 @@
     <description>AI-02: Calls the HES Customer Reply Draft prompt template for the current case and shows the draft for the agent to review and copy. Nothing is sent automatically. Launched by the Case quick action Draft Customer Reply.</description>
     <environments>Default</environments>
     <interviewLabel>Draft Customer Reply {!$Flow.CurrentDateTime}</interviewLabel>
+    <isAdditionalPermissionRequiredToRun>true</isAdditionalPermissionRequiredToRun>
     <label>Draft Customer Reply</label>
     <processMetadataValues>
         <name>BuilderType</name>
